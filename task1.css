@@ -1,0 +1,103 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+    color: #333;
+}
+
+/* Header Section */
+header {
+    background: linear-gradient(to right, #0073e6, #00aaff);
+    color: white;
+    padding: 40px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #005bb5;
+    padding: 15px 0;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+nav ul li a:hover {
+    color: #ffdd57;
+}
+
+/* Sections */
+section {
+    padding: 60px;
+    background-color: white;
+    margin: 30px auto;
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#home {
+    background: url('https://source.unsplash.com/1600x900/?travel,adventure') no-repeat center center/cover;
+    color: white;
+    padding: 120px 20px;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Destinations Section */
+#destinations h3 {
+    color: #0073e6;
+    font-size: 24px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+#destinations p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* About Section */
+#about {
+    background-color: #eef7ff;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #d9f7be;
+    font-size: 18px;
+}
+#contact p {
+    font-size: 16px;
+    color: #444;
+}
+
+/* Footer */
+footer {
+    background-color: #005bb5;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 16px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
