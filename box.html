@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Example</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .header {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 5px solid #444;
+        }
+        .nav {
+            background: #444;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .box {
+            background: #e0e0e0;
+            padding: 15px;
+            border: 1px solid #bbb;
+            margin: 10px 0;
+        }
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-top: 5px solid #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CSS Box Model Website</h1>
+        </div>
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="content">
+            <h2>Welcome to our website</h2>
+            <p>This is a simple website layout using the CSS Box Model.</p>
+            <div class="box">
+                <h3>Box 1</h3>
+                <p>This is an additional content box demonstrating the box model.</p>
+            </div>
+            <div class="box">
+                <h3>Box 2</h3>
+                <p>Another content box to show spacing, padding, and borders.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 CSS Box Model Example</p>
+        </div>
+    </div>
+</body>
+</html>
