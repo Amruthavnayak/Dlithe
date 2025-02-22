@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Travel Agency</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            transition: background-color 0.5s ease-in-out;
+        }
+        .header {
+            background: url('https://source.unsplash.com/1600x900/?travel') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            transition: transform 0.5s ease-in-out;
+        }
+        .header:hover {
+            transform: scale(1.05);
+        }
+        .services {
+            padding: 50px;
+            text-align: center;
+            background-color: white;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .services h2 {
+            color: #333;
+            transition: color 0.3s ease-in-out;
+        }
+        .service-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .service {
+            width: 30%;
+            background: #ddd;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+        }
+        .service:hover {
+            transform: scale(1.05);
+            background: #ccc;
+        }
+        .contact {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            transition: background 0.3s ease-in-out;
+        }
+        .contact:hover {
+            background: #222;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Welcome to Dream Travel Agency
+    </div>
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service">
+                <h3>Flight Booking</h3>
+                <p>Find the best deals on flights worldwide.</p>
+            </div>
+            <div class="service">
+                <h3>Hotel Reservations</h3>
+                <p>Stay in top-rated hotels with exclusive discounts.</p>
+            </div>
+            <div class="service">
+                <h3>Tour Packages</h3>
+                <p>Explore exciting destinations with our curated tour packages.</p>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@dreamtravel.com | Phone: +123 456 7890</p>
+    </section>
+</body>
+</html>

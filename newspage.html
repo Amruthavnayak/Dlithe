@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #004080;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .main-content {
+            display: flex;
+            margin-top: 20px;
+        }
+        .news-section {
+            flex: 2;
+            background: #ffffff;
+            padding: 20px;
+            margin-right: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            flex: 1;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #004080;
+        }
+        .news-item {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        .news-item img {
+            width: 50%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        ul li {
+            background: #004080;
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Daily News</h1>
+    </header>
+    <div class="container">
+        <div class="main-content">
+            <div class="news-section">
+                <h2>Latest News</h2>
+                <div class="news-item">
+                    <img src="C:\Users\amrut\Downloads\pic1.png" alt="pic1">
+                    <h3>Global Economy Faces Uncertain Future</h3>
+                    <p>With rising inflation and unpredictable market trends, financial experts predict a turbulent economic year ahead. Governments are taking measures to stabilize economies and protect consumers from increasing costs.</p>
+                </div>
+                <div class="news-item">
+                    <img src="C:\Users\amrut\Downloads\pic2.png" alt="pic2">
+                    <h3>New Tech Revolution: AI Changing Industries</h3>
+                    <p>Artificial intelligence continues to reshape industries, from healthcare to finance. Innovations in machine learning are enabling businesses to automate complex tasks and improve efficiency like never before.</p>
+                </div>
+                <div class="news-item">
+                    <img src="C:\Users\amrut\Downloads\pic3.png" alt="pic3">
+                    <h3>World Leaders Discuss Peace Agreements</h3>
+                    <p>In a crucial diplomatic meeting, world leaders are working towards resolving ongoing conflicts and fostering international cooperation. Negotiations focus on conflict resolution, trade agreements, and humanitarian aid.</p>
+                </div>
+                <div class="news-item">
+                    <img src="C:\Users\amrut\Downloads\pic4.png" alt="pic4">
+                    <h3>Breakthrough in Renewable Energy</h3>
+                    <p>Scientists have made a major breakthrough in solar panel efficiency, paving the way for a cleaner and more sustainable future. The new technology promises to reduce reliance on fossil fuels and lower carbon emissions.</p>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <h2>Trending News</h2>
+                <ul>
+                    <li>New AI Breakthrough</li>
+                    <li>Stock Market Hits Record High</li>
+                    <li>Sports Championship Highlights</li>
+                    <li>Health & Wellness Trends</li>
+                    <li>Upcoming Space Exploration Missions</li>
+                    <li>Advancements in Renewable Energy</li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
