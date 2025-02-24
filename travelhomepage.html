@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+        }
+        .hidden {
+            display: none;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, select {
+            margin: 5px;
+            padding: 10px;
+            width: 80%;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="homePage" class="container">
+        <header>
+            <h1>World Travel Agency</h1>
+            <p>Explore Your Dream Destinations</p>
+        </header>
+        <button onclick="showRegistration()">Register</button>
+    </div>
+
+    <div id="registrationPage" class="container hidden">
+        <h2>Register</h2>
+        <form onsubmit="return registerUser()">
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            <input type="text" id="address" placeholder="Enter your address" required>
+            <select id="destination" required>
+                <option value="">Select Destination</option>
+                <option value="Paris">Paris</option>
+                <option value="Maldives">Maldives</option>
+                <option value="New York">New York</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function showRegistration() {
+            document.getElementById('homePage').classList.add('hidden');
+            document.getElementById('registrationPage').classList.remove('hidden');
+        }
+        
+        function registerUser() {
+            alert('Registration Successful! Returning to Home Page.');
+            document.getElementById('registrationPage').classList.add('hidden');
+            document.getElementById('homePage').classList.remove('hidden');
+            return false; // Prevent form submission
+        }
+    </script>
+
+</body>
+</html>

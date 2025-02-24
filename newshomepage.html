@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Today</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+        }
+        .hidden {
+            display: none;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, select {
+            margin: 5px;
+            padding: 10px;
+            width: 80%;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="homePage" class="container">
+        <header>
+            <h1>News Today</h1>
+            <p>Your trusted source for the latest news</p>
+        </header>
+        <button onclick="showRegistration()">Register</button>
+    </div>
+
+    <div id="registrationPage" class="container hidden">
+        <h2>Register</h2>
+        <form onsubmit="return registerUser()">
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            <input type="text" id="address" placeholder="Enter your address" required>
+            <select id="subscription" required>
+                <option value="">Select Subscription Plan</option>
+                <option value="Free">Free</option>
+                <option value="Monthly">Monthly - $5</option>
+                <option value="Yearly">Yearly - $50</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function showRegistration() {
+            document.getElementById('homePage').classList.add('hidden');
+            document.getElementById('registrationPage').classList.remove('hidden');
+        }
+        
+        function registerUser() {
+            alert('Registration Successful! Returning to Home Page.');
+            document.getElementById('registrationPage').classList.add('hidden');
+            document.getElementById('homePage').classList.remove('hidden');
+            return false; // Prevent form submission
+        }
+    </script>
+
+</body>
+</html>
