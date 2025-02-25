@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #004080;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .main-content {
+            display: flex;
+            margin-top: 20px;
+        }
+        .news-section {
+            flex: 2;
+            background: #ffffff;
+            padding: 20px;
+            margin-right: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            flex: 1;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #004080;
+        }
+        .news-item {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        .news-item img {
+            width: 50%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        ul li {
+            background: #004080;
+            color: pink;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 3px;
+        }
+    </style>
+    <script>
+        // JavaScript Variables and Data Types
+        let siteTitle = "Daily News";
+        let currentYear = new Date().getFullYear();
+        let newsArticles = [
+            { title: "Global Economy Faces Uncertain Future", description: "With rising inflation and unpredictable market trends, financial experts predict a turbulent economic year ahead.", image: "C:/Users/amrut/Downloads/pic1.png" },
+            { title: "New Tech Revolution: AI Changing Industries", description: "Artificial intelligence continues to reshape industries, from healthcare to finance.", image: "C:/Users/amrut/Downloads/pic2.png" },
+            { title: "World Leaders Discuss Peace Agreements", description: "In a crucial diplomatic meeting, world leaders are working towards resolving ongoing conflicts.", image: "C:/Users/amrut/Downloads/pic3.png" },
+            { title: "Breakthrough in Renewable Energy", description: "Scientists have made a major breakthrough in solar panel efficiency.", image: "C:/Users/amrut/Downloads/pic4.png" }
+        ];
+        let trendingNews = [
+            "New AI Breakthrough",
+            "Stock Market Hits Record High",
+            "Sports Championship Highlights",
+            "Health & Wellness Trends",
+            "Upcoming Space Exploration Missions",
+            "Advancements in Renewable Energy"
+        ];
+    </script>
+</head>
+<body>
+    <header>
+        <h1 id="site-title"></h1>
+    </header>
+    <div class="container">
+        <div class="main-content">
+            <div class="news-section">
+                <h2>Latest News</h2>
+                <div id="news-container"></div>
+            </div>
+            <aside class="sidebar">
+                <h2>Trending News</h2>
+                <ul id="trending-news"></ul>
+            </aside>
+        </div>
+    </div>
+
+    <script>
+        // Updating Site Title
+        document.getElementById("site-title").innerText = siteTitle;
+        
+        // Dynamically Generating News Articles
+        let newsContainer = document.getElementById("news-container");
+        newsArticles.forEach(article => {
+            let div = document.createElement("div");
+            div.classList.add("news-item");
+            div.innerHTML = `
+                <img src="${article.image}" alt="${article.title}">
+                <h3>${article.title}</h3>
+                <p>${article.description}</p>
+            `;
+            newsContainer.appendChild(div);
+        });
+        
+        // Dynamically Generating Trending News
+        let trendingContainer = document.getElementById("trending-news");
+        trendingNews.forEach(item => {
+            let li = document.createElement("li");
+            li.innerText = item;
+            trendingContainer.appendChild(li);
+        });
+    </script>
+</body>
+</html>
