@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            display: none;
+        }
+        header {
+            background: #004080;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            transition: background 0.5s ease-in-out;
+        }
+        .main-content {
+            display: flex;
+            margin-top: 20px;
+        }
+        .news-section, .sidebar {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .news-section:hover, .sidebar:hover {
+            transform: scale(1.02);
+        }
+        h2 {
+            color: #004080;
+        }
+        .news-item {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            transition: background 0.3s ease-in-out;
+        }
+        .news-item:hover {
+            background: #f1f1f1;
+        }
+        .news-item img {
+            width: 50%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .news-item img:hover {
+            transform: scale(1.05);
+        }
+        ul li {
+            background: #004080;
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 3px;
+            transition: background 0.3s ease-in-out;
+        }
+        ul li:hover {
+            background: #002d5a;
+        }
+        .read-more {
+            background: #004080;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+        .read-more:hover {
+            background: #002d5a;
+        }
+        .hidden-content {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function showRegistrationForm() {
+            document.querySelector('.register-container').style.display = 'none';
+            document.querySelector('.registration-form').style.display = 'block';
+        }
+        function register() {
+            let email = document.getElementById('email').value;
+            let phone = document.getElementById('phone').value;
+            let emailPattern = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+            let phonePattern = /^\d{10}$/;
+            
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email with '@'.");
+                return;
+            }
+            if (!phonePattern.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return;
+            }
+            
+            document.querySelector('.registration-form').style.display = 'none';
+            document.querySelector('.container').style.display = 'block';
+        }
+        function toggleReadMore(id) {
+            let content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="register-container">
+        <button onclick="showRegistrationForm()">Register</button>
+    </div>
+    <div class="registration-form">
+        <h2>Register</h2>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <button onclick="register()">Submit</button>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Daily News</h1>
+        </header>
+        <div class="main-content">
+            <div class="news-section">
+                <h2>Latest News</h2>
+                <div class="news-item">
+                    <img src="pic1.png" alt="pic1">
+                    <h3>Global Economy Faces Uncertain Future</h3>
+                    <button class="read-more" onclick="toggleReadMore('content1')">Read More</button>
+                    <p id="content1" class="hidden-content">With rising inflation and unpredictable market trends, financial experts predict a turbulent economic year ahead. Governments are taking measures to stabilize economies and protect consumers from increasing costs.</p>
+                </div>
+                <div class="news-item">
+                    <img src="pic2.png" alt="pic2">
+                    <h3>New Tech Revolution: AI Changing Industries</h3>
+                    <button class="read-more" onclick="toggleReadMore('content2')">Read More</button>
+                    <p id="content2" class="hidden-content">Artificial intelligence continues to reshape industries, from healthcare to finance. Innovations in machine learning are enabling businesses to automate complex tasks and improve efficiency like never before.</p>
+                </div>
+                <div class="news-item">
+                    <img src="pic3.png" alt="pic3">
+                    <h3>World Leaders Discuss Peace Agreements</h3>
+                    <button class="read-more" onclick="toggleReadMore('content3')">Read More</button>
+                    <p id="content3" class="hidden-content">In a crucial diplomatic meeting, world leaders are working towards resolving ongoing conflicts and fostering international cooperation. Negotiations focus on conflict resolution, trade agreements, and humanitarian aid.</p>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <h2>Trending News</h2>
+                <ul>
+                    <li>New AI Breakthrough</li>
+                    <li>Stock Market Hits Record High</li>
+                    <li>Sports Championship Highlights</li>
+                    <li>Health & Wellness Trends</li>
+                    <li>Upcoming Space Exploration Missions</li>
+                    <li>Advancements in Renewable Energy</li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
