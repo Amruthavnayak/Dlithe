@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .news-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .news-item:hover {
+            transform: scale(1.05);
+        }
+        .news-item img {
+            width: 50%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .register-btn {
+            background: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .register-btn:hover {
+            background: darkblue;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+        .popup.show {
+            display: block;
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+        .popup input, .popup button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        .popup button {
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .popup button:hover {
+            background: darkblue;
+        }
+    </style>
+</head>
+
+
+<body>
+    
+    <header>
+        <h1>Latest News</h1>
+        <p>Stay updated with the latest news from around the world.</p>
+        <button class="register-btn" onclick="openPopup()">Register</button>
+    </header>
+    <div class="container">
+        <div class="news-item">
+            <h2>Breaking News</h2>
+            <img src="pic1.png" alt="News Image">
+            <p>Major global event unfolds...</p>
+        </div>
+        <div class="news-item">
+            <h2>Technology Update</h2>
+            <img src="pic2.png" alt="News Image">
+            <p>Innovations in artificial intelligence...</p>
+        </div>
+        <div class="news-item">
+            <h2>Sports Highlights</h2>
+            <img src="pic3.png" alt="News Image">
+            <p>Top teams battle it out...</p>
+        </div>
+        <div class="news-item">
+            <h2>Entertainment Buzz</h2>
+            <img src="pic4.png" alt="News Image">
+            <p>Upcoming blockbuster movies...</p>
+        </div>
+        <div class="news-item">
+            <h2>Health & Wellness</h2>
+            <img src="pic.webp" alt="News Image">
+            <p>Experts share tips on maintaining a healthy lifestyle...</p>
+        </div>
+        <div class="news-item">
+            <h2>Finance & Economy</h2>
+            <img src="pic6.webp" alt="News Image">
+            <p>Market trends and financial insights for investors...</p>
+        </div>
+    </div>
+    
+    <div class="popup" id="registerPopup">
+        <h2>Register</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="registerUser()">Submit</button>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        let users = [];
+        function openPopup() {
+            let popup = document.getElementById('registerPopup');
+            popup.classList.add('show');
+        }
+        function closePopup() {
+            let popup = document.getElementById('registerPopup');
+            popup.classList.remove('show');
+            setTimeout(() => popup.style.display = 'none', 300);
+        }
+        function registerUser() {
+            let username = document.getElementById('username').value;
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            if(username && email && password) {
+                let user = { username, email, password };
+                users.push(user);
+                alert("Registration Successful!");
+                closePopup();
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+        
+    </script>
+    
+    <script src="news.js"></script>
+
+
+</body>
+</html>

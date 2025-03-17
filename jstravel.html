@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 15px;
+        }
+
+        input#searchBox {
+            padding: 10px;
+            width: 50%;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .destination {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .destination img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .register-btn {
+            background: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+        }
+
+        .popup input, .popup select, .popup button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        .popup button {
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Explore the World with Us</h1>
+        <input type="text" id="searchBox" placeholder="Search destinations..." onkeyup="searchDestinations()">
+        <button class="register-btn" onclick="openPopup()">Book Now</button>
+    </header>
+
+    <div class="container">
+        <div class="destination" data-name="Paris">
+            <h2>Paris, France</h2>
+            <img src="picture1.webp" alt="Paris">
+            <p>Experience the beauty of the Eiffel Tower.</p>
+        </div>
+        <div class="destination" data-name="Bali">
+            <h2>Bali, Indonesia</h2>
+            <img src="picture2.webp" alt="Bali">
+            <p>Relax on the beautiful beaches of Bali.</p>
+        </div>
+        <div class="destination" data-name="New York">
+            <h2>New York, USA</h2>
+            <img src="picture3.webp" alt="New York">
+            <p>Visit Times Square and the Statue of Liberty.</p>
+        </div>
+        <div class="destination" data-name="Tokyo">
+            <h2>Tokyo, Japan</h2>
+            <img src="picture4.webp" alt="Tokyo">
+            <p>Explore the vibrant city life of Tokyo.</p>
+        </div>
+    </div>
+
+    <div class="popup" id="bookingPopup">
+        <h2>Book Your Trip</h2>
+        <input type="text" id="username" placeholder="Full Name">
+        <input type="email" id="email" placeholder="Email">
+        <select id="destination">
+            <option value="Paris">Paris - $1500</option>
+            <option value="Bali">Bali - $1200</option>
+            <option value="New York">New York - $1800</option>
+            <option value="Tokyo">Tokyo - $2000</option>
+        </select>
+        <input type="number" id="days" placeholder="Number of Days">
+        <button onclick="bookTrip()">Submit</button>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script src="travel.js"></script>
+
+</body>
+</html>
